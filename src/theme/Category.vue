@@ -12,6 +12,7 @@
     <h3>Search Result:</h3>
       <div>
         {{ searchResultMessage }}
+        {{ searchResultData }}
       </div>
     </div>
 </template>
@@ -23,7 +24,8 @@ export default {
   data() {
     return {
       county: "",
-      searchResultMessage: ""
+      searchResultMessage: "",
+      searchResultData: ""
     };
   },
   methods: {
@@ -33,6 +35,10 @@ export default {
           data.items.length == 0
             ? "no data available for that county"
             : "Message: " + data.items[0].message
+        this.searchResultData =
+          data.items.length == 0
+            ? "no Status Reason available for that county"
+            : "Status Reason: " + (data.items[0].statusReason == undefined ? "no status reason available." : data.items[0].statusReason)
         this.saveSearch(this.searchResultMessage)
       })
     },
