@@ -8506,7 +8506,7 @@ var router = new __WEBPACK_IMPORTED_MODULE_1_vue_router__["a" /* default */]({
   scrollBehavior: function scrollBehavior(to, from, savedPosition) {
     return { y: 0 };
   },
-  routes: [{ path: '/readme', name: 'readme', component: Readme }, { path: '/search', name: 'category', component: Category }, { path: '*', component: NotFound }]
+  routes: [{ path: '', name: 'indexPage', component: Category }, { path: '/readme', name: 'readme', component: Readme }, { path: '/search', name: 'category', component: Category }, { path: '*', component: NotFound }]
 });
 
 /* harmony default export */ __webpack_exports__["a"] = (router);

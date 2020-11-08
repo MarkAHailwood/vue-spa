@@ -760,6 +760,7 @@ module.exports = Cancel;
 //
 //
 //
+//
 
 
 
@@ -768,7 +769,8 @@ module.exports = Cancel;
   data: function data() {
     return {
       county: "",
-      searchResult: ""
+      searchResultMessage: "",
+      searchResultData: ""
     };
   },
 
@@ -777,13 +779,13 @@ module.exports = Cancel;
       var _this = this;
 
       __WEBPACK_IMPORTED_MODULE_0__app_service_js__["a" /* default */].getPosts(county).then(function (data) {
-        _this.showVal = data.meta.licence;
-        _this.searchResult = data.items.length == 0 ? "no data available for that county" : data.items[0].message;
-        _this.saveSearch(_this.searchResult);
+        _this.searchResultMessage = data.items.length == 0 ? "No flooding in that county per current data" : "Message: " + data.items[0].message;
+        _this.searchResultData = data.items.length == 0 ? "" : "Status Reason: " + (data.items[0].statusReason == undefined ? "no status reason available." : data.items[0].statusReason);
+        _this.saveSearch(_this.searchResultMessage);
       });
     },
     saveSearch: function saveSearch(searchData) {
-      __WEBPACK_IMPORTED_MODULE_0__app_service_js__["a" /* default */].logData(searchData);
+      __WEBPACK_IMPORTED_MODULE_0__app_service_js__["a" /* default */].logData(searchData); // route to services file, executes a console.log. I intended saving as a csv, then reading and updating in native javascript, however I have run out of time.
     }
   }
 });
@@ -1682,7 +1684,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "input is-info",
     attrs: {
       "type": "text",
-      "placeholder": "Enter County Here"
+      "placeholder": "eg.: Surrey"
     },
     domProps: {
       "value": (_vm.county)
@@ -1700,7 +1702,7 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
         _vm.loadPosts(_vm.county)
       }
     }
-  }, [_vm._v("Check flooding in my area")])]), _vm._v(" "), _c('h3', [_vm._v("Search Result:")]), _vm._v(" "), _c('div', [_vm._v("\n      " + _vm._s(_vm.searchResult) + "\n    ")])])
+  }, [_vm._v("Check flooding in my area")])]), _vm._v(" "), _c('h3', [_vm._v("Search Result:")]), _vm._v(" "), _c('div', [_vm._v("\n      " + _vm._s(_vm.searchResultMessage) + "\n      " + _vm._s(_vm.searchResultData) + "\n    ")])])
 }
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
