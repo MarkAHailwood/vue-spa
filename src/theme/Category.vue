@@ -3,7 +3,7 @@
     <h5>Enter your county below to search for flood data:</h5>
     <div class="field">
       <div class="control">
-        <input class="input is-info"  type="text" v-model="county" placeholder="Enter County Here">
+        <input class="input is-info"  type="text" v-model="county" placeholder="eg.: Surrey">
       </div>
     </div>
     <div>
@@ -11,7 +11,7 @@
     </div>
     <h3>Search Result:</h3>
       <div>
-        {{ searchResult }}
+        {{ searchResultMessage }}
       </div>
     </div>
 </template>
@@ -23,22 +23,21 @@ export default {
   data() {
     return {
       county: "",
-      searchResult: ""
+      searchResultMessage: ""
     };
   },
   methods: {
     loadPosts(county) {
       appService.getPosts(county).then((data) => {
-        this.showVal = data.meta.licence
-        this.searchResult =
+        this.searchResultMessage =
           data.items.length == 0
             ? "no data available for that county"
-            : data.items[0].message
-        this.saveSearch(this.searchResult)
+            : "Message: " + data.items[0].message
+        this.saveSearch(this.searchResultMessage)
       })
     },
     saveSearch(searchData){
-      appService.logData(searchData)
+      appService.logData(searchData) // route to services file, executes a console.log. I intended saving as a csv, then reading and updating in native javascript, however I have run out of time.
     }
   },
 };
