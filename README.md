@@ -1,13 +1,13 @@
 Build instructions:
 
+Notes:
+      The brief stated to create a high quality modern web app. I used vs code and built the framework, rather than an out-the-box angular or similar build on visual studio, as given the small nature of the project a very small production package size can be achieved through close control of the framework and application and as a result maximize performance dramatically, versus a generic build on visual studio. Also there was no need for backend so I presumed achieving brilliant performance and a very small package size was possible.
+
    clone app to c://vue-spa
    run in git bash (or other similar):
      -npm build
       -npm start
       open web broswer to localhost:3000 or as set
-
-    Notes:
-      The brief stated to create a high quality modern web app. I used vs code and built the framework, rather than an out-the-box angular or similar build on visual studio, as given the small nature of the project a very small production package size can be achieved through close control of the framework and application and as a result maximize performance dramatically, versus a generic build on visual studio. Also there was no need for backend so I presumed achieving brilliant performance and a very small package size was possible.
 
       Ultimately, i chose that as the selection criteria (smallest, fastest, lightest weight rather than largest but less control) when deciding on a css library, package manager, web server, module bundler for ensured cross-platform compatibility, web api, and any others.
 
