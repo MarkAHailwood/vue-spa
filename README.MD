@@ -1,3 +1,19 @@
+Build instructions:
+clone app to c://vue-spa
+run in git bash (or other similar):
+-npm build
+-npm start
+open web broswer to localhost:3000 or as set
+
+Notes:
+The brief stated to use a high quality modern web app. I used vs code and built the framework, rather than an out-the-box angular or similar build on visual studio, as given the small nature of the project a very small production package size can be achieved through close control of the framework and application and as a result maximize performance drematically, versus a generic build on visual studio.
+
+Ultimately, i chose that as the selection criteria (smallest, fastest, lightest weight rather than largest but less control) when deciding on a css library, package manager, web server, module bundler for ensured cross-platform compatibility, web api, and any others.
+
+In the end I started development on Saturday and ended on Sunday evening. With a day more I would have had the automated and lightweight testing complete, the router.js file would be properly configured so as to allow convertion into a production build using webpack.js.
+
+Kindly see below for further project information:
+
 Project info
 NPM used for package management,
 In package.json - depencies contains all while in development and production devDepedencies has all packages required while in development.

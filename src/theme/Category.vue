@@ -37,7 +37,7 @@ export default {
             : "Message: " + data.items[0].message
         this.searchResultData =
           data.items.length == 0
-            ? "no Status Reason available for that county"
+            ? ""
             : "Status Reason: " + (data.items[0].statusReason == undefined ? "no status reason available." : data.items[0].statusReason)
         this.saveSearch(this.searchResultMessage)
       })
