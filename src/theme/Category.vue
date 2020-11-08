@@ -33,7 +33,7 @@ export default {
       appService.getPosts(county).then((data) => {
         this.searchResultMessage =
           data.items.length == 0
-            ? "no data available for that county"
+            ? "No flooding in that county per current data"
             : "Message: " + data.items[0].message
         this.searchResultData =
           data.items.length == 0

@@ -37,4 +37,6 @@ I took a risk and used Bulma for my css rather than Bootstrap (I usually use 3 f
 
 Lastly please note I have been using vue for a week, this build was an attempt to demostrate my ability to compose my own framework and use a modern JS library as we discussed in the interview. All my above choice were entirely performance based with special consideration for it being lightweight - and in the case of a web api to make async api calls.
 
-When downloading app for first time kindly run npm install to find and download all dependencies into the node modules folder
+Requires finishing: Infrastructure exists however requires refactoring to allow for deployment - currently have an azure app service set up: https://mark-hailwood-geodesys.azurewebsites.net/. Using native javascript in a custom built framework makes for a challening build deploy - I have simply run out of time.
+
+When downloading app for first time kindly run npm install to find and download all dependencies into the node modules folder. Then run npm start.

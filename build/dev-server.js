@@ -8,8 +8,7 @@ module.exports = function setupDevSever(app){
     'webpack-hot-middleware/client',
    clientConfig.entry.app]
    clientConfig.plugins.push(
-     new webpack.HotModuleReplacementPlugin(),
-     new webpack.NoEmitOnErrorsPlugin()
+     new webpack.HotModuleReplacementPlugin()
    )
   const clientCompiler = webpack(clientConfig)
   app.use(
